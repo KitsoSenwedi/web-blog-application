@@ -17,7 +17,7 @@ let posts = [
 
 //routes
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('home', {posts});
 });
 
 app.get('/newpost', (req, res) => {
