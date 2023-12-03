@@ -1,0 +1,18 @@
+<!-- In the head of home.ejs and newpost.ejs -->
+<link rel="stylesheet" type="text/css" href="/styles/main.css">
+
+<h1>Welcome to the Blog</h1>
+<p>Recent Posts:</p>
+<ul>
+    <% posts.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post.id %>"><%= post.title %></a>
+            <a href="/post/<%= post.id %>/edit">(Edit)</a>
+            <form method="post" action="/post/<%= post.id %>/delete" style="display: inline;">
+                <button type="submit">(Delete)</button>
+            </form>
+        </li>
+    <% }); %>
+</ul>
+
+<a href="/newpost">Create a New Post</a>
